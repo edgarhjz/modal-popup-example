@@ -56,7 +56,6 @@
                     </asp:Panel>
                     <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="HyperLink1" PopupControlID="Panel1" BackgroundCssClass="modalBackground" CancelControlID="btnClose">
                     </cc1:ModalPopupExtender>
-                    
                 </td>
             </tr>
         </table>
