@@ -10,7 +10,13 @@
         {
             width: 100%;
         }
-        .modal Popup
+        .modalBackground
+        {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+        }
+        .modalPopup
         {
             border: 3px solid black;
             background-color: #FFFFFF;
@@ -32,26 +38,28 @@
             <tr>
                 <td>
                     <asp:Button ID="btnStart" runat="server" Height="52px" Text="Start" 
-                        Width="93px" />
+                        Width="93px" onclick="btnStart_Click" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>
-                    <asp:Panel ID="Panel1" runat="server">
-                        <asp:Image ID="Image1" runat="server" 
-                            ImageUrl="~/Images/modalpopupextender.png" />
-                    </asp:Panel>
-                    <asp:Button ID="btnClose" runat="server" Text="Close" Height="55px" 
-                        Width="97px" />
-                    <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="HyperLink1" PopupControlID="Panel1" BackgroundCssClass="modalBackground" CancelControlID="btnClose">
-                    </cc1:ModalPopupExtender>
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
                     </asp:ScriptManager>
+                    <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>
+                    <asp:Panel ID="Panel1" runat="server" Visible="False" CssClass="modalPopup">
+                        <asp:Image ID="Image1" runat="server" 
+                            ImageUrl="~/Images/modalpopupextender.png" />
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="btnClose" runat="server" Text="Close" Height="55px" 
+                        Width="97px" />
+                    </asp:Panel>
+                    <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="HyperLink1" PopupControlID="Panel1" BackgroundCssClass="modalBackground" CancelControlID="btnClose">
+                    </cc1:ModalPopupExtender>
+                    
                 </td>
             </tr>
         </table>
-    
     </div>
     </form>
 </body>
