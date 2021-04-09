@@ -10,6 +10,13 @@
         {
             width: 100%;
         }
+        .modal Popup
+        {
+            border: 3px solid black;
+            background-color: #FFFFFF;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -30,10 +37,17 @@
             </tr>
             <tr>
                 <td>
+                    <asp:HyperLink ID="HyperLink1" runat="server"></asp:HyperLink>
                     <asp:Panel ID="Panel1" runat="server">
                         <asp:Image ID="Image1" runat="server" 
                             ImageUrl="~/Images/modalpopupextender.png" />
                     </asp:Panel>
+                    <asp:Button ID="btnClose" runat="server" Text="Close" Height="55px" 
+                        Width="97px" />
+                    <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="HyperLink1" PopupControlID="Panel1" BackgroundCssClass="modalBackground" CancelControlID="btnClose">
+                    </cc1:ModalPopupExtender>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
                 </td>
             </tr>
         </table>
